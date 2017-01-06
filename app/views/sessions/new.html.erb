@@ -1,0 +1,12 @@
+<h1>This is the new session action </h1>
+
+<%= link_to "Log out", signup_path, method: "delete" %>
+
+<%= form_for(:session, url: signup_path) do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    
+    <%= f.submit "Log in" %>
+<% end %>

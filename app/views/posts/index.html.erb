@@ -1,0 +1,19 @@
+<% if logged_in? %>
+    <%= link_to 'Create Post', new_post_path %>
+    <%= link_to 'Logout', signup_path, method: "delete" %>
+
+<% else %>
+    <%= link_to 'Log in', signup_path %>
+    
+<% end %>
+
+<ul>
+    <% @post.each do |post| %>
+        <li>Title: <%= post.title %> </li>
+        <li>Body: <%= post.content %> </li>
+        
+        <% if logged_in? %>
+        <li><%= post.user.username %></li>
+        <% end %>
+    <% end %>
+</ul>

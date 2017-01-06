@@ -1,0 +1,7 @@
+<h1>new post</h1>
+<%= form_for (@post) do |f| %>
+    Title: <%= f.text_field :title %>
+    Body: <%= f.text_area :content %>
+    
+    <%= submit_tag %>
+<% end %>
